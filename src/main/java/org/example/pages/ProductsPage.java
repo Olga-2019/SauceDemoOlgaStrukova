@@ -9,6 +9,8 @@ public class ProductsPage extends BasePage {
     private final By TITLE = By.cssSelector(".title");
     private final String addToCartButton = "//div[text()='%s']/ancestor::div[@class='inventory_item']//button";
 
+
+
     public ProductsPage(WebDriver driver) {
         super(driver);
     }
@@ -25,4 +27,5 @@ public class ProductsPage extends BasePage {
         By fullLocator = By.xpath(String.format(addToCartButton, productName));
         driver.findElement(fullLocator).click();
     }
+
 }

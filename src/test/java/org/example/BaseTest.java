@@ -1,6 +1,8 @@
 package org.example;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.example.pages.CartPage;
+import org.example.pages.CheckoutPage;
 import org.example.pages.LoginPage;
 import org.example.pages.ProductsPage;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +17,9 @@ public class BaseTest {
     WebDriver driver;
     LoginPage loginPage;
     ProductsPage productsPage;
+    CartPage cartPage;
+    CheckoutPage checkoutPage;
+
 
     @BeforeMethod
     public void setUp() {
@@ -27,11 +32,12 @@ public class BaseTest {
         //Create pages
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
+        cartPage = new CartPage(driver);
+        checkoutPage = new CheckoutPage(driver);
     }
 
     @AfterMethod(alwaysRun = true)
-    public void tearDown()
-    {
+    public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
