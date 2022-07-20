@@ -15,7 +15,7 @@ public class CheckoutTest extends BaseTest {
         cartPage.checkout();
         checkoutPage.fillIn("test", "test", "12345");
         checkoutPage.informationPage();
-        assertTrue(checkoutPage.getTitle().isDisplayed(), "User stayed on checkout page");
+        assertTrue(informationPage.getTitle().isDisplayed(), "it is not InformationPage");
     }
 
     @Test
